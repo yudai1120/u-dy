@@ -1,0 +1,42 @@
+h1,h4 {
+   font-weight: 50;
+}
+
+.text-white {
+  color: #696969;
+}
+.btn-white {
+  color: #696969;
+  border: 1px solid #696969;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.0);
+
+  &:hover {
+    color: #fff;
+  }
+}
+.top-hero-wrapper {
+  width: 120vw;
+  height: 120vh;
+  position: relative;
+  background-image: url("coffee.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+.top-hero-container {
+   position: absolute;
+   top: 200px;
+   right: 100px;
+  h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+  h4 {
+    margin-bottom: 40px;
+  }
+}
