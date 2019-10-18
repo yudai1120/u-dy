@@ -1,0 +1,45 @@
+<%= form_with(model: company, local: true) do |form| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :name,"会社名" %>
+    <%= form.text_field :name,class: "form-control",required: true %>
+  </div>
+  <div class="form-group">
+    <%= form.label :address,"住所" %>
+    <%= form.text_field :address,class: "form-control",required: true %>
+  </div>
+  <div class="form-group">
+    <%= form.label :email,"メールアドレス" %>
+    <%= form.text_field :email,class: "form-control",required: true %>
+  </div>
+  <div class="form-group">
+    <%= form.label :phone_number,"電話番号" %>
+    <%= form.number_field :phone_number,class: "form-control",required: true %>
+  </div>
+  <div class="form-group">
+    <%= form.label :employee_number,"従業員数" %>
+    <%= form.number_field :employee_number,class: "form-control",required: true %>
+  </div>
+  <div class="form-group">
+    <%= form.label :password,"パスワード（8文字以上32文字以内で入力してください）" %>
+    <%= form.password_field :password,class: "form-control",required: true %>
+  </div>
+  <div class="form-group">
+    <%= form.label :password_confirmation,"パスワードの確認" %>
+    <%= form.password_field :password_confirmation,class: "form-control",required: true %>
+  </div>
+
+  <div class="action text-center">
+    <%= form.submit "登録",class: "btn btn-secondary mx-auto mt-5 btn-block" %>
+  </div>
+<% end %>

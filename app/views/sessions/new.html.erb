@@ -1,0 +1,22 @@
+<div class="top-hero-wrapper" >
+  <div class="container">
+    <div class="row">
+     <div class="col-md-offset-4 col-md-4 login-new-container">
+       <h1 class="text-center text-gray">ログイン</h1>
+       <%= form_for :session, url: login_path do |f| %>
+         <div class="form_group">
+           <%= f.label :email, class: "text-gray" %>
+           <%= f.text_field :email, class: "form-control",required: true %>
+         </div>
+         <div class="form_group">
+           <%= f.label :password, class: "text-gray" %>
+           <%= f.password_field :password, class: "form-control", required: true%>
+         </div>
+       
+         <%= f.submit "ログイン", class: "btn-block btn-gray btn-compile" %>
+       
+       <% end %>
+     </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="attend-top-wrapper">
+  <div class="container mt-5 pt-5">
+    <div class="card mt-5 pt-5">
+      <%#= render @attends %>
+      <div class="row">
+      <%= form_for :attend,url: "/attends" do |f| %>
+        <%= f.submit "出勤" , class: "btn btn-warning mt-5" %>
+      <% end %>
+
+      <%= form_for :punch_out, url: "/punch_out" do |f| %>
+        <%= f.submit "退勤" , class: "btn btn-warning mt-5" %>
+      <% end %>
+      
+      <%= form_for :break_time, url: "/break_time" do |f| %>
+        <%= f.submit "休憩", class: "btn btn-warning mt-5" %>
+      <% end %>
+      
+      <%= form_for :break_time_end, url: "/break_time_end" do |f| %>
+        <%= f.submit "戻り", class: "btn btn-warning mt-5" %>
+      <% end %>
+      </div>
+      
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">日付</th>
+            <th scope="col">フラグ（遅刻・早退など）</th>
+            <th scope="col">出勤時間</th>
+            <th scope="col">退勤時間</th>
+            <th scope="col">休憩時間</th>
+            <th scope="col">休憩終了時間</th>
+            <th scope="col">編集</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @attends.each do |attend| %>
+            <tr>
+              <th scope="row"><%= attend.day %></th>
+              <td><%= attend.status %></td>
+              <% if attend.start_time.nil? %>
+                <td>--:--</td>
+              <% else %>
+                <td><%= attend.start_time.strftime("%H時%M分") %></td>
+              <% end %>
+              <% if attend.finish_time.nil? %>
+                <td>--:--</td>
+              <% else %>
+                <td><%= attend.finish_time.strftime("%H時%M分") %></td>
+              <% end %>
+              <% if attend.break_start_time.nil? %>
+                <td>--:--</td>
+              <% else %>
+                <td><%= attend.break_start_time.strftime("%H時%M分") %></td>
+              <% end %>
+              <% if attend.break_finish_time.nil? %>
+                <td>--:--</td>
+              <% else %>
+                <td><%= attend.break_finish_time.strftime("%H時%M分") %></td>
+              <% end %>
+              <td><%= attend.remarks %></td>
+              <td><%#= link_to "編集",attend ,class: "btn btn-secondary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
