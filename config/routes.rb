@@ -11,13 +11,13 @@ Rails.application.routes.draw do
   root "pages#index"
   get "pages/help"
   get "sessions/help"
-  
+  get "/attends/:id/edit" => "attends#edit",as: "attend"
+  patch "/attends/:id/edit" => "attends#update"
   resources :users
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   
-  get  "/root", to: "pages#index"
   
 end

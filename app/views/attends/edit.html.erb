@@ -1,0 +1,25 @@
+<div class="attend-top-wrapper">
+  <header>
+    <h2 class="text-attend">U-dy</h2>
+      <p class="text-attend">勤怠管理システム</p>
+  </header>
+  <%= form_for @attend do |f| %>
+      <p>
+      <%= f.label(:start_time, "出勤") %>
+      <%= f.time_field :start_time %>
+      </p>
+      <p>
+      <%= f.label :finish_time, "退勤" %>
+      <%= f.time_field :finish_time %>
+      </p>
+      <p>
+      <%= f.label :break_start_time, "休憩" %>
+      <%= f.time_field :break_start_time %>
+      </p>
+      <p>
+        <%= f.label :break_finish_time, "戻り" %>
+        <%= f.time_field :break_finish_time %>
+      </p>
+      <%= f.submit "修正" %>
+  <% end %>
+ 

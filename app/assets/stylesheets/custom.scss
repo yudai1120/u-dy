@@ -79,7 +79,7 @@ h1, h2 {
 }
 .navbar-transparent {
   margin-bottom: 0px;
-  background-color: rgba(0,0,0,0.5);
+ 
   a {
     color: #fff;
   }
@@ -121,8 +121,9 @@ h1, h2 {
   overflow: hidden;
     height: 100vh;
 }
-.btn-warning {
+.btn-success {
   margin: 20px;
+  border-radius: 100px;
 }
 .form-control {
     border-style: none;
@@ -137,30 +138,55 @@ h1, h2 {
 }
 .menu-var {
   position: absolute;
-  right: 30px;
+  top: 30px;
+  right: 40px;
 }
 .toggle span {
    
    display: block;
-   width: 30px;
-   height: 4px;
+   transition: all .4s;
+   width: 50px;
+   height: 5px;
    border-radius: 100px;
    background: #fff;
-   margin-bottom: 4px
    
+   margin-bottom: 10px
 }
-          
+
 .menu {
   position: fixed;
-  top: 50px;
   right: 0;
-  z-index: 99999;
   display: none;
-  width: 10%;
-  height: 40%;
-  background: rgba(0,0,0,.5);
+  width: 8%;
+  height: 100%;
+  background: rgba(250, 250, 250, 0.7);
 }
-.inside-menu {
-  list-style: none;
+.menu.active {
+  right: 0;
+}
+.text-menu {
+  position: absolute;
+  top: 80px;
+}
+.text-shadow {
+  font-weight: bold;
+  color: #696969;
   
+  &:hover {
+    text-shadow: 5px 5px 1px #999999;
+  }
+}
+
+
+.card {
+  margin-top: 20px;
+  background: rgba(250, 250, 250, 0.7);
+}
+
+.text-attend {
+  display: inline-block;
+  color: #696969;
+  font-weight: bold;
+  padding-left: 18px;
+  background-color: transparent;
 }

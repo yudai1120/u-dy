@@ -46,4 +46,13 @@ class AttendsController < ApplicationController
     end
   end
   
+  def edit
+    @attend = Attend.find(params[:id])
+  end
+  
+  def update
+    @attend = Attend.find(params[:id])
+    @attend.update(params.require(:attend).permit(:start_time, :finish_time, :break_start_time, :break_finish_time))
+  redirect_to "/attends"
+  end
 end

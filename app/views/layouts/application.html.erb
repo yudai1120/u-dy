@@ -33,15 +33,15 @@
       </div>
     </nav>
     <div class="menu js-menu">
-      <ul>
-        <li><%= link_to "ホーム", root_path , class:"on-menu" %></li>
-         <li><%= link_to "ログイン", login_path, class:"on-menu" %></li>
-         <li><%= link_to "ログアウト", logout_path, class:"on-men" %></li>
+      <ul class="text-menu">
+        <li><%= link_to "ホーム", root_path, class:"text-shadow" %></li>
+         <li><%= link_to "ログイン", login_path, class:"text-shadow" %></li>
+         <li><%= link_to "ログアウト", logout_path, class:"text-shadow" %></li>
        </ul>
     </div>
-  
 
     <%= yield %>
+    
           <script>
            var toggle = document.getElementsByClassName('js-toggle')[0];
            var menu = document.getElementsByClassName('js-menu')[0];
