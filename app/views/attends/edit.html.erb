@@ -3,7 +3,8 @@
     <h2 class="text-attend">U-dy</h2>
       <p class="text-attend">勤怠管理システム</p>
   </header>
-  <%= form_for @attend do |f| %>
+  <body>
+    <%= form_for @attend do |f| %>
       <p>
       <%= f.label(:start_time, "出勤") %>
       <%= f.time_field :start_time %>
@@ -22,4 +23,6 @@
       </p>
       <%= f.submit "修正" %>
   <% end %>
+  </body>
+</div>
  
