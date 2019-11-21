@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   patch "/attends/:id/edit" => "attends#update"
   resources :users
   
-  get    'https://u-dy.herokuapp.com/login',   to: 'sessions#new'
-  post   'https://u-dy.herokuapp.com/login',   to: 'sessions#create'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   
   
